@@ -3,15 +3,20 @@
 @extends('...template')
 
 @section('title')
-    Kilian Hendrickx - Logboek
+    Pieter Meulemeester - Logboek
 @stop
 
 @section('css')
     @parent
     {{ HTML::style('css/table.css') }}
 @stop
+@section('navbar')
+    @if(Auth::check())
+        @parent
+    @endif
+@stop
 @section('pagetitle')
-    Logboek
+    Pieter Meulemeester - Logboek
 @stop
 
 @section('body')
@@ -27,8 +32,8 @@
         <tbody>
                 @foreach( $entries as $entry)
                     <tr>
-                        <td title=" {{ Carbon::createFromFormat('Y-m-d H:i:s', $entry->datum)->format('d-m-Y') }}">
-                            {{ Carbon::createFromFormat('Y-m-d H:i:s', $entry->datum)->diffForHumans() }}
+                        <td title="datum" width="120px;">
+                            {{ $entry->datum }}
                         </td>
                         <td>{{ $entry->tijd }}</td>
                         <td>{{ $entry->omschrijving }}</td>
