@@ -3,7 +3,7 @@
 @extends('...template')
 
 @section('title')
-    Pieter Meulemeester - Logboek
+    {{ $_ENV['Owner'] }} - Logboek
 @stop
 
 @section('css')
@@ -16,7 +16,7 @@
     @endif
 @stop
 @section('pagetitle')
-    Pieter Meulemeester - Logboek
+    {{ $_ENV['Owner'] }} - Logboek
 @stop
 
 @section('body')
