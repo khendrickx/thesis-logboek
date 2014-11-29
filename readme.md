@@ -1,10 +1,6 @@
 #Installation
 ## Add an .env.php file to your project's root directory
- <?php
-  return array(
-   'DB_USER' => '***',
-   'DB_PASS' => '***',
-  );
+ Use .env.php.example as example
  
 ## Update the app/config/database.php file to you needs
 ## Update the app/config/app.php file to you needs
