@@ -63,7 +63,7 @@ class LogboekAdminController extends \BaseController {
         } else {
             $logboek = Logboek::all()->last();
 
-            $entryType = EntryType::find(Input::get('entrytype'))->firstOrFail();
+            $entryType = EntryType::find(Input::get('entrytype'));
 
             $entry = new Entry();
             $entry->omschrijving = Input::get('omschrijving');
