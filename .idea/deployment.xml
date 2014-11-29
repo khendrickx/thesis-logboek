@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Localhost">
+  <component name="PublishConfigData" serverName="Localhost" stopOnFirstError="true" deleteMissingItems="true" persistUploadOnCheckin="false">
     <serverData>
+      <paths name="Kilian Thesis">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/laravel" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/public_html" local="$PROJECT_DIR$/public" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
       <paths name="Localhost">
         <serverdata>
           <mappings>

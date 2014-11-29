@@ -32,8 +32,8 @@
         <tbody>
                 @foreach( $entries as $entry)
                     <tr>
-                        <td title="datum" width="120px;">
-                            {{ $entry->datum }}
+                         <td title=" {{ Carbon::createFromFormat('Y-m-d H:i:s', $entry->datum)->format('d-m-Y') }}">
+                            {{ Carbon::createFromFormat('Y-m-d H:i:s', $entry->datum)->diffForHumans() }}
                         </td>
                         <td>{{ $entry->tijd }}</td>
                         <td>{{ $entry->omschrijving }}</td>
