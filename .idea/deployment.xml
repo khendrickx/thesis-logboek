@@ -13,13 +13,6 @@
           </excludedPaths>
         </serverdata>
       </paths>
-      <paths name="Localhost">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="laravel" />
-          </mappings>
-        </serverdata>
-      </paths>
     </serverData>
   </component>
 </project>
