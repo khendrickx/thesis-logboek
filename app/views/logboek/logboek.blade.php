@@ -36,7 +36,7 @@
                             {{ Carbon::createFromFormat('Y-m-d H:i:s', $entry->datum)->diffForHumans() }}
                         </td>
                         <td>{{ $entry->tijd }}</td>
-                        <td>{{ $entry->omschrijving }}</td>
+                        <td>{{ nl2br($entry->omschrijving) }}</td>
                         <td>{{ $entry->entryType()->getResults()->naam }}</td>
                     </tr>
                 @endforeach
