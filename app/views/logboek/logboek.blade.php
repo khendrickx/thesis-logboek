@@ -27,23 +27,21 @@
                 <th>Tijdsduur</th>
                 <th>Omschrijving</th>
                 <th>Type</th>
+                <th>Totaaltijd</th>
             </tr>
         </thead>
         <tbody>
-                @foreach( $entries as $entry)
-                    <tr>
-                         <td title=" {{ Carbon::createFromFormat('Y-m-d H:i:s', $entry->datum)->format('d-m-Y') }}">
-                            {{ Carbon::createFromFormat('Y-m-d H:i:s', $entry->datum)->diffForHumans() }}
-                        </td>
-                        <td>{{ $entry->tijd }}</td>
-                        <td>{{ nl2br($entry->omschrijving) }}</td>
-                        <td>{{ $entry->entryType()->getResults()->naam }}</td>
-                    </tr>
-                @endforeach
+            @foreach( $entries as $entry)
                 <tr>
-                    <th>Totaal</th>
-                    <th> {{ $logboek->totalTime() }}</th>
+                     <td title=" {{ Carbon::createFromFormat('Y-m-d H:i:s', $entry->datum)->format('d-m-Y') }}">
+                        {{ Carbon::createFromFormat('Y-m-d H:i:s', $entry->datum)->diffForHumans() }}
+                    </td>
+                    <td>{{ $entry->tijd }}</td>
+                    <td>{{ nl2br($entry->omschrijving) }}</td>
+                    <td>{{ $entry->entryType()->getResults()->naam }}</td>
+                    <td>{{ $logboek->totalTime($entry->datum) }}</td>
                 </tr>
+            @endforeach
         </tbody>
     </table>
 @stop

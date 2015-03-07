@@ -14,17 +14,21 @@ class Logboek extends Eloquent {
         return $this->hasMany("Entry")->orderBy('datum', 'DESC');
     }
 
-    public function totalTime(){
-        return $this->entry()->select(
-            DB::raw(
-                'SEC_TO_TIME(
-                    SUM(
-                        TIME_TO_SEC(
-                            tijd
+    public function totalTime($datum = null){
+        $query = $this->entry()->select(
+                DB::raw(
+                    'SEC_TO_TIME(
+                        SUM(
+                            TIME_TO_SEC(
+                                tijd
+                            )
                         )
-                    )
-                ) as tijd'
-            )
-        )->getResults()->first()->tijd;
+                    ) as tijd'
+                )
+            );
+        if ($datum != null)
+            $query->where('datum', '<=', $datum);
+
+        return $query->getResults()->first()->tijd;
     }
 }
